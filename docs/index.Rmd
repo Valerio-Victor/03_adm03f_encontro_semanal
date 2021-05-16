@@ -39,25 +39,24 @@ xaringanExtra::use_search(show_icon = TRUE)
 
 ## TÓPICOS ABORDADOS
 
-</br>
 
-[**PIB (preços de mercado)**](#pib_precos_mercado)
-
-</br>
-
-[**PIB (número índice)**](#pib_numero_indice)
+- [**PIB (preços de mercado)**](#pib_precos_mercado)
 
 </br>
 
-[**PIB (com ajuste sazonal)**](#pib_com_ajuste_sazonal)
+- [**PIB (número índice)**](#pib_numero_indice)
 
 </br>
 
-[**PIB versus Desemprego**](#pib_versus_desemprego)
+- [**PIB (com ajuste sazonal)**](#pib_com_ajuste_sazonal)
 
 </br>
 
-[**PIB versus RNB**](#pib_versus_rnb)
+- [**PIB _versus_ Desemprego**](#pib_versus_desemprego)
+
+</br>
+
+- [**PIB _versus_ RNB**](#pib_versus_rnb)
 
 
 ---
@@ -108,7 +107,7 @@ o **PIB** também pode ser compreendido como um **indicador de renda agregada da
 
 </br>
 
-- Na prática, o PIB pode ser calculado considerando diferentes preços para os bens ou serviços 
+- Na prática, o **PIB** pode ser calculado considerando **diferentes preços** para os bens ou serviços 
 produzidos, são exemplos:
 
     - **PIB a preços básicos**, em que os preços dos produtos são calculados ao se considerar o valor na 
@@ -125,11 +124,11 @@ os preços para o consumidor final.
 
 ---
 
-class: center, middle 
+
+## O BRASIL EM PERSPECTIVA: PIB
 
 
-
-```{r, warning = F,message = F, error = F, echo = F, fig.align = 'center', fig.width = 3, fig.height = 2, dpi = 300}
+```{r, warning = F,message = F, error = F, echo = F, fig.align = 'center', dpi = 300}
 
 
 `%>%` <- magrittr::`%>%`
@@ -170,7 +169,9 @@ pib_precos_mercado <- agregados_macroeconomicos %>%
 
   ggplot2::geom_point(mapping = ggplot2::aes(x = Trimestre, y = PIB),
 
-                      colour = '#23395b') +
+                      colour = '#23395b',
+                      
+                      size = .75) +
   
   ggplot2::labs(title = 'Produto Interno Bruto - PIB (Y) \nPreços de Mercado',
                 
@@ -185,7 +186,10 @@ pib_precos_mercado <- agregados_macroeconomicos %>%
                                  title_font_size = 15)
 
 
-plotly::ggplotly(pib_precos_mercado)
+pib_precos_mercado <- plotly::ggplotly(pib_precos_mercado)
+
+
+widgetframe::frameWidget(pib_precos_mercado, width = '100%', height = '100%')
 
 
 ```
@@ -198,14 +202,78 @@ class: inverse, center, middle
 name: pib_numero_indice
 
 
-## PRODUTO INTERNO BRUTO (NÚMERO ÍNDICE)
+## PRODUTO INTERNO BRUTO </br> (NÚMERO ÍNDICE)
+
+
+---
+
+<div style="text-align: justify">
+
+
+# O QUE É UM NÚMERO ÍNDICE?
+
+
+- Em alguns casos, a análise pode se concentrar em 
 
 
 ---
 
 
-class: center, middle 
+## O BRASIL EM PERSPECTIVA: PIB
 
 
-## PRODUTO INTERNO BRUTO (NÚMERO ÍNDICE)
+```{r, warning = F,message = F, error = F, echo = F, fig.align = 'center', dpi = 300}
+
+
+pib_numero_indice <- sidrar::get_sidra(api = '/t/1620/n1/all/v/all/p/all/c11255/90707',
+
+                         period = as.Date('2020-04-01')) %>%
+
+  janitor::clean_names() %>%
+
+  dplyr::mutate(date = zoo::as.yearqtr(trimestre_codigo, format = '%Y %q')) %>%
+
+  dplyr::select(date, valor)
+
+
+pib_numero_indice <- pib_numero_indice %>%
+
+  ggplot2::ggplot() +
+
+  ggplot2::geom_line(mapping = ggplot2::aes(x = date, y = valor),
+
+                     colour = '#23395b',
+
+                     size = .5) +
+
+  ggplot2::geom_point(mapping = ggplot2::aes(x = date, y = valor),
+
+                      colour = '#23395b',
+                      
+                      size = .75) +
+
+  ggplot2::labs(title = 'Produto Interno Bruto - PIB (Y) \nNúmero Índice',
+
+                x = 'Trimestres',
+
+                y = 'Número Índice (Base: média de 1995 = 100)',
+
+                caption = 'Dados: IBGE.') +
+
+
+xaringanthemer::theme_xaringan(text_font_size = 12,
+
+                                 title_font_size = 15)
+
+
+pib_numero_indice <- plotly::ggplotly(pib_numero_indice)
+
+
+widgetframe::frameWidget(pib_numero_indice, width = '100%', height = '100%')
+
+
+```
+
+
+
 

@@ -14,13 +14,8 @@
     <script src="index_files/xaringanExtra-search-0.0.1/search.js"></script>
     <script>window.addEventListener('load', function() { window.xeSearch = new RemarkSearch({"position":"bottom-left","caseSensitive":false,"showIcon":true,"autoSearch":true}) })</script>
     <script src="index_files/htmlwidgets-1.5.3/htmlwidgets.js"></script>
-    <script src="index_files/plotly-binding-4.9.3/plotly.js"></script>
-    <script src="index_files/typedarray-0.1/typedarray.min.js"></script>
-    <script src="index_files/jquery-3.5.1/jquery.min.js"></script>
-    <link href="index_files/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
-    <script src="index_files/crosstalk-1.1.1/js/crosstalk.min.js"></script>
-    <link href="index_files/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
-    <script src="index_files/plotly-main-1.57.1/plotly-latest.min.js"></script>
+    <script src="index_files/pymjs-1.3.2/pym.v1.js"></script>
+    <script src="index_files/widgetframe-binding-0.3.1/widgetframe.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
@@ -44,25 +39,24 @@ class: center, middle, inverse, title-slide
 
 ## TÓPICOS ABORDADOS
 
-&lt;/br&gt;
 
-[**PIB (preços de mercado)**](#pib_precos_mercado)
-
-&lt;/br&gt;
-
-[**PIB (número índice)**](#pib_numero_indice)
+- [**PIB (preços de mercado)**](#pib_precos_mercado)
 
 &lt;/br&gt;
 
-[**PIB (com ajuste sazonal)**](#pib_com_ajuste_sazonal)
+- [**PIB (número índice)**](#pib_numero_indice)
 
 &lt;/br&gt;
 
-[**PIB versus Desemprego**](#pib_versus_desemprego)
+- [**PIB (com ajuste sazonal)**](#pib_com_ajuste_sazonal)
 
 &lt;/br&gt;
 
-[**PIB versus RNB**](#pib_versus_rnb)
+- [**PIB _versus_ Desemprego**](#pib_versus_desemprego)
+
+&lt;/br&gt;
+
+- [**PIB _versus_ RNB**](#pib_versus_rnb)
 
 
 ---
@@ -113,7 +107,7 @@ o **PIB** também pode ser compreendido como um **indicador de renda agregada da
 
 &lt;/br&gt;
 
-- Na prática, o PIB pode ser calculado considerando diferentes preços para os bens ou serviços 
+- Na prática, o **PIB** pode ser calculado considerando **diferentes preços** para os bens ou serviços 
 produzidos, são exemplos:
 
     - **PIB a preços básicos**, em que os preços dos produtos são calculados ao se considerar o valor na 
@@ -130,12 +124,12 @@ os preços para o consumidor final.
 
 ---
 
-class: center, middle 
+
+## O BRASIL EM PERSPECTIVA: PIB
 
 
-
-<div id="htmlwidget-bf41bd6b68b06d2ed8eb" style="width:900px;height:600px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-bf41bd6b68b06d2ed8eb">{"x":{"data":[{"x":[2000,2000.25,2000.5,2000.75,2001,2001.25,2001.5,2001.75,2002,2002.25,2002.5,2002.75,2003,2003.25,2003.5,2003.75,2004,2004.25,2004.5,2004.75,2005,2005.25,2005.5,2005.75,2006,2006.25,2006.5,2006.75,2007,2007.25,2007.5,2007.75,2008,2008.25,2008.5,2008.75,2009,2009.25,2009.5,2009.75,2010,2010.25,2010.5,2010.75,2011,2011.25,2011.5,2011.75,2012,2012.25,2012.5,2012.75,2013,2013.25,2013.5,2013.75,2014,2014.25,2014.5,2014.75,2015,2015.25,2015.5,2015.75,2016,2016.25,2016.5,2016.75,2017,2017.25,2017.5,2017.75,2018,2018.25,2018.5,2018.75,2019,2019.25,2019.5,2019.75,2020,2020.25,2020.5,2020.75],"y":[276927,292789,308896,320481,312470,323724,332524,347038,342297,367363,379795,399333,397242,418987,439350,462372,444783,481795,505252,525920,499710,535557,552859,582458,554270,581977,617848,655355,631423,670655,691846,726339,712055,769525,812603,815620,756127,803577,852843,920492,886397,944145,997935,1057370,1016531,1086712,1112334,1160805,1129474,1183126,1230449,1271712,1241614,1322580,1354134,1413291,1385980,1422320,1462126,1508527,1456671,1479981,1508227,1550909,1500226,1558992,1577187,1632924,1585969,1630936,1648571,1720002,1680867,1733453,1768337,1821484,1765633,1834366,1884003,1923021,1843863,1708760,1891735,2003500],"text":["Trimestre: 2000 Q1<br />PIB:  276927","Trimestre: 2000 Q2<br />PIB:  292789","Trimestre: 2000 Q3<br />PIB:  308896","Trimestre: 2000 Q4<br />PIB:  320481","Trimestre: 2001 Q1<br />PIB:  312470","Trimestre: 2001 Q2<br />PIB:  323724","Trimestre: 2001 Q3<br />PIB:  332524","Trimestre: 2001 Q4<br />PIB:  347038","Trimestre: 2002 Q1<br />PIB:  342297","Trimestre: 2002 Q2<br />PIB:  367363","Trimestre: 2002 Q3<br />PIB:  379795","Trimestre: 2002 Q4<br />PIB:  399333","Trimestre: 2003 Q1<br />PIB:  397242","Trimestre: 2003 Q2<br />PIB:  418987","Trimestre: 2003 Q3<br />PIB:  439350","Trimestre: 2003 Q4<br />PIB:  462372","Trimestre: 2004 Q1<br />PIB:  444783","Trimestre: 2004 Q2<br />PIB:  481795","Trimestre: 2004 Q3<br />PIB:  505252","Trimestre: 2004 Q4<br />PIB:  525920","Trimestre: 2005 Q1<br />PIB:  499710","Trimestre: 2005 Q2<br />PIB:  535557","Trimestre: 2005 Q3<br />PIB:  552859","Trimestre: 2005 Q4<br />PIB:  582458","Trimestre: 2006 Q1<br />PIB:  554270","Trimestre: 2006 Q2<br />PIB:  581977","Trimestre: 2006 Q3<br />PIB:  617848","Trimestre: 2006 Q4<br />PIB:  655355","Trimestre: 2007 Q1<br />PIB:  631423","Trimestre: 2007 Q2<br />PIB:  670655","Trimestre: 2007 Q3<br />PIB:  691846","Trimestre: 2007 Q4<br />PIB:  726339","Trimestre: 2008 Q1<br />PIB:  712055","Trimestre: 2008 Q2<br />PIB:  769525","Trimestre: 2008 Q3<br />PIB:  812603","Trimestre: 2008 Q4<br />PIB:  815620","Trimestre: 2009 Q1<br />PIB:  756127","Trimestre: 2009 Q2<br />PIB:  803577","Trimestre: 2009 Q3<br />PIB:  852843","Trimestre: 2009 Q4<br />PIB:  920492","Trimestre: 2010 Q1<br />PIB:  886397","Trimestre: 2010 Q2<br />PIB:  944145","Trimestre: 2010 Q3<br />PIB:  997935","Trimestre: 2010 Q4<br />PIB: 1057370","Trimestre: 2011 Q1<br />PIB: 1016531","Trimestre: 2011 Q2<br />PIB: 1086712","Trimestre: 2011 Q3<br />PIB: 1112334","Trimestre: 2011 Q4<br />PIB: 1160805","Trimestre: 2012 Q1<br />PIB: 1129474","Trimestre: 2012 Q2<br />PIB: 1183126","Trimestre: 2012 Q3<br />PIB: 1230449","Trimestre: 2012 Q4<br />PIB: 1271712","Trimestre: 2013 Q1<br />PIB: 1241614","Trimestre: 2013 Q2<br />PIB: 1322580","Trimestre: 2013 Q3<br />PIB: 1354134","Trimestre: 2013 Q4<br />PIB: 1413291","Trimestre: 2014 Q1<br />PIB: 1385980","Trimestre: 2014 Q2<br />PIB: 1422320","Trimestre: 2014 Q3<br />PIB: 1462126","Trimestre: 2014 Q4<br />PIB: 1508527","Trimestre: 2015 Q1<br />PIB: 1456671","Trimestre: 2015 Q2<br />PIB: 1479981","Trimestre: 2015 Q3<br />PIB: 1508227","Trimestre: 2015 Q4<br />PIB: 1550909","Trimestre: 2016 Q1<br />PIB: 1500226","Trimestre: 2016 Q2<br />PIB: 1558992","Trimestre: 2016 Q3<br />PIB: 1577187","Trimestre: 2016 Q4<br />PIB: 1632924","Trimestre: 2017 Q1<br />PIB: 1585969","Trimestre: 2017 Q2<br />PIB: 1630936","Trimestre: 2017 Q3<br />PIB: 1648571","Trimestre: 2017 Q4<br />PIB: 1720002","Trimestre: 2018 Q1<br />PIB: 1680867","Trimestre: 2018 Q2<br />PIB: 1733453","Trimestre: 2018 Q3<br />PIB: 1768337","Trimestre: 2018 Q4<br />PIB: 1821484","Trimestre: 2019 Q1<br />PIB: 1765633","Trimestre: 2019 Q2<br />PIB: 1834366","Trimestre: 2019 Q3<br />PIB: 1884003","Trimestre: 2019 Q4<br />PIB: 1923021","Trimestre: 2020 Q1<br />PIB: 1843863","Trimestre: 2020 Q2<br />PIB: 1708760","Trimestre: 2020 Q3<br />PIB: 1891735","Trimestre: 2020 Q4<br />PIB: 2003500"],"type":"scatter","mode":"lines+markers","line":{"width":1.88976377952756,"color":"rgba(35,57,91,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","marker":{"autocolorscale":false,"color":"rgba(35,57,91,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(35,57,91,1)"}},"frame":null}],"layout":{"margin":{"t":50.8692403486924,"r":7.30593607305936,"b":43.3042756330428,"l":103.412204234122},"plot_bgcolor":"rgba(233,235,238,1)","paper_bgcolor":"rgba(233,235,238,1)","font":{"color":"rgba(45,59,81,1)","family":"Noto Sans","size":15.9402241594022},"title":{"text":"Produto Interno Bruto - PIB (Y) <br />Preços de Mercado","font":{"color":"rgba(35,57,91,1)","family":"Cabin","size":23.9103362391034},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[1998.9625,2021.7875],"tickmode":"array","ticktext":["2000","2005","2010","2015","2020"],"tickvals":[2000,2005,2010,2015,2020],"categoryorder":"array","categoryarray":["2000","2005","2010","2015","2020"],"nticks":null,"ticks":"outside","tickcolor":"rgba(191,196,203,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(108,117,133,1)","family":"Noto Sans","size":12.7521793275218},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(191,196,203,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Trimestres","font":{"color":"rgba(35,57,91,1)","family":"Cabin","size":15.9402241594022}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[190598.35,2089828.65],"tickmode":"array","ticktext":["R$ 500.000","R$ 1.000.000","R$ 1.500.000","R$ 2.000.000"],"tickvals":[500000,1000000,1500000,2000000],"categoryorder":"array","categoryarray":["R$ 500.000","R$ 1.000.000","R$ 1.500.000","R$ 2.000.000"],"nticks":null,"ticks":"outside","tickcolor":"rgba(191,196,203,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(108,117,133,1)","family":"Noto Sans","size":12.7521793275218},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(191,196,203,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"Milhões de Reais","font":{"color":"rgba(35,57,91,1)","family":"Cabin","size":15.9402241594022}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(233,235,238,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(45,59,81,1)","family":"Noto Sans","size":12.7521793275218}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false},"source":"A","attrs":{"5f9826142c0b":{"x":{},"y":{},"type":"scatter"},"5f987d1a471a":{"x":{},"y":{}}},"cur_data":"5f9826142c0b","visdat":{"5f9826142c0b":["function (y) ","x"],"5f987d1a471a":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-03e3464e53277c8a882e" style="width:100%;height:100%;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-03e3464e53277c8a882e">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-1.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
 
 
 ---
@@ -145,16 +139,31 @@ class: inverse, center, middle
 name: pib_numero_indice
 
 
-## PRODUTO INTERNO BRUTO (NÚMERO ÍNDICE)
+## PRODUTO INTERNO BRUTO &lt;/br&gt; (NÚMERO ÍNDICE)
+
+
+---
+
+&lt;div style="text-align: justify"&gt;
+
+
+# O QUE É UM NÚMERO ÍNDICE?
+
+
+- Em alguns casos, a análise pode se concentrar em 
 
 
 ---
 
 
-class: center, middle 
+## O BRASIL EM PERSPECTIVA: PIB
 
 
-## PRODUTO INTERNO BRUTO (NÚMERO ÍNDICE)
+<div id="htmlwidget-4a678bf755c164057450" style="width:100%;height:100%;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4a678bf755c164057450">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-2.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+
+
+
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
