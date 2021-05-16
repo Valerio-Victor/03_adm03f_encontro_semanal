@@ -16,6 +16,8 @@
     <script src="index_files/htmlwidgets-1.5.3/htmlwidgets.js"></script>
     <script src="index_files/pymjs-1.3.2/pym.v1.js"></script>
     <script src="index_files/widgetframe-binding-0.3.1/widgetframe.js"></script>
+    <script src="index_files/kePrint-0.0.1/kePrint.js"></script>
+    <link href="index_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
@@ -25,7 +27,7 @@ class: center, middle, inverse, title-slide
 # SOCIODEMOGRAFIA DA TURMA </br> (AULA 02)
 ## ADM03F - Macroeconomia
 ### Autor: Victor Valerio
-### Última atualização: 15-05-2021
+### Última atualização: 16-05-2021
 
 ---
 
@@ -40,23 +42,23 @@ class: center, middle, inverse, title-slide
 ## TÓPICOS ABORDADOS
 
 
-- [**PIB (preços de mercado)**](#pib_precos_mercado)
+- [**PIB (PREÇOS DE MERCADO)**](#pib_precos_mercado)
 
 &lt;/br&gt;
 
-- [**PIB (número índice)**](#pib_numero_indice)
+- [**PIB (NÚMERO ÍNDICE)**](#pib_numero_indice)
 
 &lt;/br&gt;
 
-- [**PIB (com ajuste sazonal)**](#pib_com_ajuste_sazonal)
+- [**PIB (AJUSTE SAZONAL)**](#pib_com_ajuste_sazonal)
 
 &lt;/br&gt;
 
-- [**PIB _versus_ Desemprego**](#pib_versus_desemprego)
+- [**PIB (CICLOS ECONÔMICOS)**](#pib_versus_desemprego)
 
 &lt;/br&gt;
 
-- [**PIB _versus_ RNB**](#pib_versus_rnb)
+- [**PIB _versus_ DESEMPREGO**](#pib_versus_desemprego)
 
 
 ---
@@ -128,8 +130,8 @@ os preços para o consumidor final.
 ## O BRASIL EM PERSPECTIVA: PIB
 
 
-<div id="htmlwidget-5906b2564449e37fb112" style="width:100%;height:100%;" class="widgetframe html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5906b2564449e37fb112">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-1.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-6d2439dfef8f3553efae" style="width:100%;height:100%;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6d2439dfef8f3553efae">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-1.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
 
 
 ---
@@ -150,7 +152,112 @@ name: pib_numero_indice
 # O QUE É UM NÚMERO ÍNDICE?
 
 
-- Em alguns casos, a análise pode se concentrar em 
+**MOTIVAÇÃO**:
+
+
+&lt;/br&gt;
+
+
+- Em alguns casos, a análise pode se concentrar na evolução da série histórica e, desta forma, os
+próprios valores de PIB podem não ser relevantes. Como dito, o foco está na análise da **variação do 
+PIB ao longo do tempo**.
+
+&lt;/br&gt;
+
+- Diante destes casos, podemos realizar uma transformação nos valores da série histórica de modo a 
+torná-los mais "amigáveis", **facilitando a análise de variação da série histórica**. Para tanto, 
+em geral, utiliza-se um instrumento chamado **número índice**.
+
+
+---
+
+&lt;div style="text-align: justify"&gt;
+
+
+# O QUE É UM NÚMERO ÍNDICE?
+
+
+**CONCEITO**:
+
+
+&lt;/br&gt;
+
+
+- O cálculo do **número índice** é muito simples e pode ser compreendido a partir de uma sequência de
+3 passos, são eles:
+
+  - **Passo 1** -&gt; Selecione um período da série histórica de valores como **base do número índice**;
+  
+  - **Passo 2** -&gt; Atribua um valor mais "amigável" para representar o valor da base, em geral, 
+  utiliza-se o **valor 100**;
+  
+  - **Passo 3** -&gt; Faça a correspondência para os demais valores da série, simplesmente, a partir de 
+  "**regras de três**".
+  
+- Ainda não ficou claro? Vejamos um exemplo no slide seguinte.
+
+
+---
+
+&lt;div style="text-align: justify"&gt;
+
+
+# O QUE É UM NÚMERO ÍNDICE?
+
+
+**EXEMPLO HIPOTÉTICO**:
+
+
+&lt;table class="table table-striped" style="font-size: 24px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; DATAS &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; VALORES &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; TRANSFORMAÇÕES &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; ÍNDICES &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 2015 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; R$ 12.589 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 12.589 = 100 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 100 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 2016 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; R$ 13.785 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; R$ 13.785 x 100/ R$ 12.589 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 109,50 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 2017 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; R$ 13.947 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; R$ 13.947 x 100/ R$ 12.589 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 110,79 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 2018 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; R$ 14.125 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; R$ 14.125 x 100/ R$ 12.589 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 112,20 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 2019 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; R$ 15.352 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; R$ 15.352 x 100/ R$ 12.589 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 121,95 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 2020 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; R$ 16.756 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; R$ 16.756 x 100/ R$ 12.589 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 133,10 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
 
 
 ---
@@ -159,9 +266,37 @@ name: pib_numero_indice
 ## O BRASIL EM PERSPECTIVA
 
 
-<div id="htmlwidget-35ce900e699df3250252" style="width:100%;height:100%;" class="widgetframe html-widget"></div>
-<script type="application/json" data-for="htmlwidget-35ce900e699df3250252">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-2.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-bf66ef349f86c10a03d0" style="width:100%;height:100%;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bf66ef349f86c10a03d0">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-3.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
 
+
+---
+
+
+class: inverse, center, middle 
+name: pib_numero_indice
+
+
+## PRODUTO INTERNO BRUTO &lt;/br&gt; (AJUSTE SAZONAL)
+
+
+---
+
+&lt;div style="text-align: justify"&gt;
+
+
+# O QUE É UM AJUSTE SAZONAL?
+
+
+**MOTIVAÇÃO**:
+
+
+&lt;/br&gt;
+
+
+- Em alguns casos, a análise pode se concentrar na evolução da série histórica e, desta forma, os
+próprios valores de PIB podem não ser relevantes. Como dito, o foco está na análise da **variação do 
+PIB ao longo do tempo**.
 
 ---
 
@@ -169,8 +304,8 @@ name: pib_numero_indice
 ## O BRASIL EM PERSPECTIVA
 
 
-<div id="htmlwidget-a6a77de4b53446114cac" style="width:100%;height:100%;" class="widgetframe html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a6a77de4b53446114cac">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-3.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-b87c05fcce41287e6e2e" style="width:100%;height:100%;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b87c05fcce41287e6e2e">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-4.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
 
 
 

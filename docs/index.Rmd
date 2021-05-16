@@ -40,23 +40,23 @@ xaringanExtra::use_search(show_icon = TRUE)
 ## TÓPICOS ABORDADOS
 
 
-- [**PIB (preços de mercado)**](#pib_precos_mercado)
+- [**PIB (PREÇOS DE MERCADO)**](#pib_precos_mercado)
 
 </br>
 
-- [**PIB (número índice)**](#pib_numero_indice)
+- [**PIB (NÚMERO ÍNDICE)**](#pib_numero_indice)
 
 </br>
 
-- [**PIB (com ajuste sazonal)**](#pib_com_ajuste_sazonal)
+- [**PIB (AJUSTE SAZONAL)**](#pib_com_ajuste_sazonal)
 
 </br>
 
-- [**PIB _versus_ Desemprego**](#pib_versus_desemprego)
+- [**PIB (CICLOS ECONÔMICOS)**](#pib_versus_desemprego)
 
 </br>
 
-- [**PIB _versus_ RNB**](#pib_versus_rnb)
+- [**PIB _versus_ DESEMPREGO**](#pib_versus_desemprego)
 
 
 ---
@@ -173,7 +173,7 @@ pib_precos_mercado <- agregados_macroeconomicos %>%
                       
                       size = .75) +
   
-  ggplot2::labs(title = 'Produto Interno Bruto - PIB (Y) \nPreços de Mercado',
+  ggplot2::labs(title = 'PIB a preços de mercado (Y)',
                 
                 y = 'Milhões de Reais',
               
@@ -181,9 +181,9 @@ pib_precos_mercado <- agregados_macroeconomicos %>%
   
   ggplot2::scale_y_continuous(labels = scales::dollar_format(prefix = 'R$ ', big.mark = '.')) +
   
-  xaringanthemer::theme_xaringan(text_font_size = 12,
+  xaringanthemer::theme_xaringan(text_font_size = 15,
                                  
-                                 title_font_size = 15)
+                                 title_font_size = 20)
 
 
 pib_precos_mercado <- plotly::ggplotly(pib_precos_mercado)
@@ -213,7 +213,109 @@ name: pib_numero_indice
 # O QUE É UM NÚMERO ÍNDICE?
 
 
-- Em alguns casos, a análise pode se concentrar em 
+**MOTIVAÇÃO**:
+
+
+</br>
+
+
+- Em alguns casos, a análise pode se concentrar na evolução da série histórica e, desta forma, os
+próprios valores de PIB podem não ser relevantes. Como dito, o foco está na análise da **variação do 
+PIB ao longo do tempo**.
+
+</br>
+
+- Diante destes casos, podemos realizar uma transformação nos valores da série histórica de modo a 
+torná-los mais "amigáveis", **facilitando a análise de variação da série histórica**. Para tanto, 
+em geral, utiliza-se um instrumento chamado **número índice**.
+
+
+---
+
+<div style="text-align: justify">
+
+
+# O QUE É UM NÚMERO ÍNDICE?
+
+
+**CONCEITO**:
+
+
+</br>
+
+
+- O cálculo do **número índice** é muito simples e pode ser compreendido a partir de uma sequência de
+3 passos, são eles:
+
+  - **Passo 1** -> Selecione um período da série histórica de valores como **base do número índice**;
+  
+  - **Passo 2** -> Atribua um valor mais "amigável" para representar o valor da base, em geral, 
+  utiliza-se o **valor 100**;
+  
+  - **Passo 3** -> Faça a correspondência para os demais valores da série, simplesmente, a partir de 
+  "**regras de três**".
+  
+- Ainda não ficou claro? Vejamos um exemplo no slide seguinte.
+
+
+---
+
+<div style="text-align: justify">
+
+
+# O QUE É UM NÚMERO ÍNDICE?
+
+
+**EXEMPLO HIPOTÉTICO**:
+
+
+```{r , results = 'asis', echo = F, warning = F, message = F, error = F, fig.align ='center'}
+
+
+library(magrittr)
+
+
+library(kableExtra)
+
+
+ex_numero_indice <- data.frame(
+  
+  DATAS = c(2015, 2016, 2017, 2018, 2019, 2020),
+  
+  VALORES = c('R$ 12.589', 
+              'R$ 13.785', 
+              'R$ 13.947', 
+              'R$ 14.125', 
+              'R$ 15.352', 
+              'R$ 16.756'),
+  
+  TRANSFORMAÇÕES = c('12.589 = 100', 
+                    'R$ 13.785 x 100/ R$ 12.589', 
+                    'R$ 13.947 x 100/ R$ 12.589', 
+                    'R$ 14.125 x 100/ R$ 12.589', 
+                    'R$ 15.352 x 100/ R$ 12.589', 
+                    'R$ 16.756 x 100/ R$ 12.589'),
+  
+  ÍNDICES = c('100', '109,50', '110,79', '112,20', '121,95', '133,10'))
+
+
+knitr::kable(ex_numero_indice, 
+             
+             escape = FALSE,
+    
+             format = 'html',
+             
+             align = c('c', 'c', 'c', 'c')) %>%
+  
+  kable_styling(bootstrap_options = 'striped', font_size = 24)
+  
+
+
+
+
+```
+
+
 
 
 ---
@@ -236,23 +338,27 @@ pib_numero_indice <- sidrar::get_sidra(api = '/t/1620/n1/all/v/all/p/all/c11255/
   dplyr::select(date, valor)
 
 
-pib_numero_indice <- pib_numero_indice %>%
+pib_numero_indice <- pib_numero_indice %>% 
+  
+   dplyr::rename('Trimestre' = date,
+                
+                'PIB' = valor) %>% 
 
   ggplot2::ggplot() +
 
-  ggplot2::geom_line(mapping = ggplot2::aes(x = date, y = valor),
+  ggplot2::geom_line(mapping = ggplot2::aes(x = Trimestre, y = PIB),
 
                      colour = '#23395b',
 
                      size = .5) +
 
-  ggplot2::geom_point(mapping = ggplot2::aes(x = date, y = valor),
+  ggplot2::geom_point(mapping = ggplot2::aes(x = Trimestre, y = PIB),
 
                       colour = '#23395b',
                       
                       size = .75) +
 
-  ggplot2::labs(title = 'Produto Interno Bruto - PIB (Y) \nNúmero Índice (sem ajuste sazonal)',
+  ggplot2::labs(title = 'PIB - Y (Número índice sem ajuste sazonal)',
 
                 x = 'Trimestres',
 
@@ -261,9 +367,9 @@ pib_numero_indice <- pib_numero_indice %>%
                 caption = 'Dados: IBGE.') +
 
 
-xaringanthemer::theme_xaringan(text_font_size = 12,
+xaringanthemer::theme_xaringan(text_font_size = 15,
 
-                                 title_font_size = 15)
+                                 title_font_size = 20)
 
 
 pib_numero_indice <- plotly::ggplotly(pib_numero_indice)
@@ -274,6 +380,34 @@ widgetframe::frameWidget(pib_numero_indice, width = '100%', height = '100%')
 
 ```
 
+
+---
+
+
+class: inverse, center, middle 
+name: pib_numero_indice
+
+
+## PRODUTO INTERNO BRUTO </br> (AJUSTE SAZONAL)
+
+
+---
+
+<div style="text-align: justify">
+
+
+# O QUE É UM AJUSTE SAZONAL?
+
+
+**MOTIVAÇÃO**:
+
+
+</br>
+
+
+- Em alguns casos, a análise pode se concentrar na evolução da série histórica e, desta forma, os
+próprios valores de PIB podem não ser relevantes. Como dito, o foco está na análise da **variação do 
+PIB ao longo do tempo**.
 
 ---
 
@@ -296,22 +430,26 @@ pib_numero_indice_cas <- sidrar::get_sidra(api = '/t/1621/n1/all/v/all/p/all/c11
 
 
 pib_numero_indice_cas <- pib_numero_indice_cas %>%
+  
+  dplyr::rename('Trimestre' = date,
+                
+                'PIB' = valor) %>% 
 
   ggplot2::ggplot() +
 
-  ggplot2::geom_line(mapping = ggplot2::aes(x = date, y = valor),
+  ggplot2::geom_line(mapping = ggplot2::aes(x = Trimestre, y = PIB),
 
                      colour = '#23395b',
 
                      size = .5) +
 
-  ggplot2::geom_point(mapping = ggplot2::aes(x = date, y = valor),
+  ggplot2::geom_point(mapping = ggplot2::aes(x = Trimestre, y = PIB),
 
                       colour = '#23395b',
                       
                       size = .75) +
 
-  ggplot2::labs(title = 'Produto Interno Bruto - PIB (Y) \nNúmero Índice (com ajuste sazonal)',
+  ggplot2::labs(title = 'PIB - Y (Número índice com ajuste sazonal)',
 
                 x = 'Trimestres',
 
@@ -320,9 +458,9 @@ pib_numero_indice_cas <- pib_numero_indice_cas %>%
                 caption = 'Dados: IBGE.') +
 
 
-xaringanthemer::theme_xaringan(text_font_size = 12,
+xaringanthemer::theme_xaringan(text_font_size = 15,
 
-                                 title_font_size = 15)
+                               title_font_size = 20)
 
 
 pib_numero_indice_cas <- plotly::ggplotly(pib_numero_indice_cas)
