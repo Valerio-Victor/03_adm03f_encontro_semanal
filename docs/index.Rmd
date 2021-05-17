@@ -42,19 +42,27 @@ xaringanExtra::use_search(show_icon = TRUE)
 
 - [**PIB (PREÇOS DE MERCADO)**](#pib_precos_mercado)
 
+
 </br>
+
 
 - [**PIB (NÚMERO ÍNDICE)**](#pib_numero_indice)
 
+
 </br>
+
 
 - [**PIB (AJUSTE SAZONAL)**](#pib_com_ajuste_sazonal)
 
+
 </br>
+
 
 - [**PIB (CICLOS ECONÔMICOS)**](#pib_versus_desemprego)
 
+
 </br>
+
 
 - [**PIB _versus_ DESEMPREGO**](#pib_versus_desemprego)
 
@@ -70,42 +78,53 @@ name: pib_precos_mercado
 
 
 ---
-
 <div style="text-align: justify">
+
 
 ## PRODUTO INTERNO BRUTO (PREÇOS DE MERCADO)
 
+
 **CONCEITOS VISTOS NA ÚLTIMA AULA**:
 
+
 </br>
+
 
 - O **Produto Interno Bruto (PIB)** corresponde ao cálculo do **Produto Agregado** com foco no 
 **âmbito geográfico**;
 
+
 </br>
+
 
 - O **PIB** corresponde a um **indicador de nível de produção** de um país em um determinado período 
 de tempo (isto é chamado de **variável de fluxo**);
 
+
 </br>
+
 
 - Como toda **renda** é formada a partir do **valor adicionado** (ou valor agregado) gerado na produção,
 o **PIB** também pode ser compreendido como um **indicador de renda agregada da população**;
 
+
 </br>
+
 
 - Nas formulações macroeconômicas o **PIB** é representado pela letra **Y**.
 
 
 ---
-
 <div style="text-align: justify">
+
 
 ## PRODUTO INTERNO BRUTO (PREÇOS DE MERCADO)
 
 **VISÃO PRÁTICA**:
 
+
 </br>
+
 
 - Na prática, o **PIB** pode ser calculado considerando **diferentes preços** para os bens ou serviços 
 produzidos, são exemplos:
@@ -117,10 +136,13 @@ produzidos, são exemplos:
     básicos com adição de impostos líquidos (impostos menos subsídios), margens de comércio e de 
     transporte.
     
+    
 </br>
+    
     
 - Durante o curso nós nos concentraremos no **PIB a preços de mercado** de modo a considerar apenas 
 os preços para o consumidor final.
+
 
 ---
 
@@ -206,7 +228,6 @@ name: pib_numero_indice
 
 
 ---
-
 <div style="text-align: justify">
 
 
@@ -223,7 +244,9 @@ name: pib_numero_indice
 próprios valores de PIB podem não ser relevantes. Como dito, o foco está na análise da **variação do 
 PIB ao longo do tempo**.
 
+
 </br>
+
 
 - Diante destes casos, podemos realizar uma transformação nos valores da série histórica de modo a 
 torná-los mais "amigáveis", **facilitando a análise de variação da série histórica**. Para tanto, 
@@ -231,7 +254,6 @@ em geral, utiliza-se um instrumento chamado **número índice**.
 
 
 ---
-
 <div style="text-align: justify">
 
 
@@ -255,11 +277,14 @@ em geral, utiliza-se um instrumento chamado **número índice**.
   - **Passo 3** -> Faça a correspondência para os demais valores da série, simplesmente, a partir de 
   "**regras de três**".
   
+  
+</br>
+  
+  
 - Ainda não ficou claro? Vejamos um exemplo no slide seguinte.
 
 
 ---
-
 <div style="text-align: justify">
 
 
@@ -267,6 +292,9 @@ em geral, utiliza-se um instrumento chamado **número índice**.
 
 
 **EXEMPLO HIPOTÉTICO**:
+
+
+</br>
 
 
 ```{r , results = 'asis', echo = F, warning = F, message = F, error = F, fig.align ='center'}
@@ -316,8 +344,6 @@ knitr::kable(ex_numero_indice,
 ```
 
 
-
-
 ---
 
 
@@ -358,7 +384,7 @@ pib_numero_indice <- pib_numero_indice %>%
                       
                       size = .75) +
 
-  ggplot2::labs(title = 'PIB - Y (Número índice sem ajuste sazonal)',
+  ggplot2::labs(title = 'PIB - Y (Número índice)',
 
                 x = 'Trimestres',
 
@@ -385,29 +411,72 @@ widgetframe::frameWidget(pib_numero_indice, width = '100%', height = '100%')
 
 
 class: inverse, center, middle 
-name: pib_numero_indice
+name: pib_com_ajuste_sazonal
 
 
 ## PRODUTO INTERNO BRUTO </br> (AJUSTE SAZONAL)
 
 
 ---
-
 <div style="text-align: justify">
 
 
 # O QUE É UM AJUSTE SAZONAL?
 
 
-**MOTIVAÇÃO**:
+**OSCILAÇÕES DE UMA SÉRIE HISTÓRICA DO PIB**:
 
 
 </br>
 
 
-- Em alguns casos, a análise pode se concentrar na evolução da série histórica e, desta forma, os
-próprios valores de PIB podem não ser relevantes. Como dito, o foco está na análise da **variação do 
-PIB ao longo do tempo**.
+- Ao observar uma série histórica do **PIB** a partir de um **número índice**, por exemplo, é possível
+observar a presença de **oscilações constantes dos valores**. Estas oscilações ocorrem 
+fundamentalmente por 2 motivos, são eles:
+
+	- **Sazonalidade**;
+	
+	- **Ciclos Econômicos**.
+	
+	
+</br>
+	
+	
+-  Define-se por **sazonalidade** eventos inerentes aos setores econômicos de um país que geram, 
+como consequência, efeitos recorrentes em períodos específicos do ano. A sazonalidade torna inviável 
+a comparação entre períodos.
+
+
+---
+<div style="text-align: justify">
+
+
+# O QUE É UM AJUSTE SAZONAL?
+
+
+**EXEMPLOS DE EVENTOS SAZONAIS**
+
+
+</br>
+
+
+- São exemplos de eventos sazonais:
+
+	- Festas Tradicionais e Feriados: Carnaval, Corpus Christi, Natal e etc.;
+	
+	- Períodos de Safras e Entressafras: Soja, Milho, Café e etc.;
+	
+	- Ciclos Produtivos da Indústria Extrativista: Extrativismo Vegetal e Animal e etc.
+	
+	
+</br>
+
+
+- Todos estes eventos combinados acabam por fomentar, até certo ponto, um padrão de oscilações na 
+série histórica do PIB, conforme evidenciado pelo gráfico no próximo slide em que se repete um
+movimento de crescimento nos 3 primeiros trimestres (em azul) e declínio até o início do primeiro
+trimestre do próximo ano (em vermelho).
+
 
 ---
 
@@ -418,7 +487,7 @@ PIB ao longo do tempo**.
 ```{r, warning = F,message = F, error = F, echo = F, fig.align = 'center', dpi = 300}
 
 
-pib_numero_indice_cas <- sidrar::get_sidra(api = '/t/1621/n1/all/v/all/p/all/c11255/90707',
+pib_numero_indice <- sidrar::get_sidra(api = '/t/1620/n1/all/v/all/p/all/c11255/90707',
 
                          period = as.Date('2020-04-01')) %>%
 
@@ -429,47 +498,549 @@ pib_numero_indice_cas <- sidrar::get_sidra(api = '/t/1621/n1/all/v/all/p/all/c11
   dplyr::select(date, valor)
 
 
-pib_numero_indice_cas <- pib_numero_indice_cas %>%
+pib_numero_indice <- pib_numero_indice %>% 
   
-  dplyr::rename('Trimestre' = date,
+   dplyr::rename('Trimestre' = date,
                 
                 'PIB' = valor) %>% 
 
-  ggplot2::ggplot() +
-
+  ggplot2::ggplot(mapping = ggplot2::aes(x = Trimestre, y = PIB)) +
+  
   ggplot2::geom_line(mapping = ggplot2::aes(x = Trimestre, y = PIB),
-
+                     
                      colour = '#23395b',
-
+                     
                      size = .5) +
-
+  
   ggplot2::geom_point(mapping = ggplot2::aes(x = Trimestre, y = PIB),
-
+                      
                       colour = '#23395b',
                       
                       size = .75) +
-
-  ggplot2::labs(title = 'PIB - Y (Número índice com ajuste sazonal)',
-
+  
+  ggplot2::labs(title = 'PIB - Y (Número índice sem ajuste sazonal)',
+                
                 x = 'Trimestres',
-
+                
                 y = 'Número Índice (Base: média de 1995 = 100)',
-
+                
                 caption = 'Dados: IBGE.') +
+  
+  
+  xaringanthemer::theme_xaringan(text_font_size = 15,
+                                 
+                                 title_font_size = 20) +
+  
+  ggplot2::theme(axis.title.x = ggtext::element_markdown(),
+                 
+                 axis.title.y = ggtext::element_markdown(),
+                 
+                 plot.title = ggtext::element_markdown(),
+                 
+                 plot.caption = ggtext::element_markdown()) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('199601', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('199603', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#23395b', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('199701', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('199703', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#23395b', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('199801', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('199803', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#23395b', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('199901', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('199903', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#23395b', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('200001', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('200003', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#23395b', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('200101', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('200103', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#23395b', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('200201', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('200203', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#23395b', alpha = 0.6) +
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('200301', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('200303', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#23395b', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('200401', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('200403', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#23395b', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('200501', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('200503', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#23395b', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('200601', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('200603', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#23395b', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('200701', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('200703', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#23395b', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('200801', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('200803', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#23395b', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('200901', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('200903', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#23395b', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('201001', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('201003', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#23395b', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('201101', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('201103', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#23395b', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('201201', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('201203', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#23395b', alpha = 0.6) +
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('201301', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('201303', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#23395b', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('201401', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('201403', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#23395b', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('201501', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('201503', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#23395b', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('201601', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('201603', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#23395b', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('201701', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('201703', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#23395b', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('201801', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('201803', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#23395b', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('201901', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('201903', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#23395b', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('202001', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('202003', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#23395b', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('199603', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('199701', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#4A3844', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('199703', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('199801', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#4A3844', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('199803', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('199901', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#4A3844', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('199903', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('200001', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#4A3844', alpha = 0.6) + 
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('200003', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('200101', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#4A3844', alpha = 0.6) + 
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('200103', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('200201', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#4A3844', alpha = 0.6) + 
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('200203', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('200301', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#4A3844', alpha = 0.6) + 
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('200303', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('200401', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#4A3844', alpha = 0.6) + 
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('200403', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('200501', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#4A3844', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('200503', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('200601', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#4A3844', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('200603', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('200701', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#4A3844', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('200703', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('200801', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#4A3844', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('200803', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('200901', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#4A3844', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('200903', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('201001', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#4A3844', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('201003', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('201101', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#4A3844', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('201103', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('201201', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#4A3844', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('201203', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('201301', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#4A3844', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('201303', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('201401', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#4A3844', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('201403', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('201501', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#4A3844', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('201503', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('201601', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#4A3844', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('201603', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('201701', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#4A3844', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('201703', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('201801', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#4A3844', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('201803', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('201901', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#4A3844', alpha = 0.6) +
+  
+  ggplot2::annotate(geom = 'rect',
+                    
+                    xmin = zoo::as.yearqtr('201903', format = '%Y %q'),
+                    
+                    xmax = zoo::as.yearqtr('202001', format = '%Y %q'),
+                    
+                    ymin = 95, ymax = 180,
+                    
+                    fill = '#4A3844', alpha = 0.6) 
+  
+
+pib_numero_indice <- plotly::ggplotly(pib_numero_indice)
 
 
-xaringanthemer::theme_xaringan(text_font_size = 15,
-
-                               title_font_size = 20)
-
-
-pib_numero_indice_cas <- plotly::ggplotly(pib_numero_indice_cas)
-
-
-widgetframe::frameWidget(pib_numero_indice_cas, width = '100%', height = '100%')
+widgetframe::frameWidget(pib_numero_indice, width = '100%', height = '100%')
 
 
 ```
+
+
+
+
+
+
 
 
 
