@@ -84,7 +84,7 @@ name: pib_precos_mercado
 ## PRODUTO INTERNO BRUTO (PREÇOS DE MERCADO)
 
 
-**CONCEITOS VISTOS NA ÚLTIMA AULA**:
+**CONCEITOS VISTOS NA ÚLTIMA AULA**
 
 
 </br>
@@ -120,7 +120,7 @@ o **PIB** também pode ser compreendido como um **indicador de renda agregada da
 
 ## PRODUTO INTERNO BRUTO (PREÇOS DE MERCADO)
 
-**VISÃO PRÁTICA**:
+**VISÃO PRÁTICA**
 
 
 </br>
@@ -234,7 +234,7 @@ name: pib_numero_indice
 # O QUE É UM NÚMERO ÍNDICE?
 
 
-**MOTIVAÇÃO**:
+**MOTIVAÇÃO**
 
 
 </br>
@@ -260,7 +260,7 @@ em geral, utiliza-se um instrumento chamado **número índice**.
 # O QUE É UM NÚMERO ÍNDICE?
 
 
-**CONCEITO**:
+**CONCEITO**
 
 
 </br>
@@ -291,7 +291,7 @@ em geral, utiliza-se um instrumento chamado **número índice**.
 # O QUE É UM NÚMERO ÍNDICE?
 
 
-**EXEMPLO HIPOTÉTICO**:
+**EXEMPLO HIPOTÉTICO**
 
 
 </br>
@@ -424,7 +424,7 @@ name: pib_com_ajuste_sazonal
 # O QUE É UM AJUSTE SAZONAL?
 
 
-**OSCILAÇÕES DE UMA SÉRIE HISTÓRICA DO PIB**:
+**MOTIVAÇÃO**
 
 
 </br>
@@ -454,7 +454,7 @@ a comparação entre períodos.
 # O QUE É UM AJUSTE SAZONAL?
 
 
-**EXEMPLOS DE EVENTOS SAZONAIS**
+**CONCEITO - EVENTOS SAZONAIS**
 
 
 </br>
@@ -1035,6 +1035,102 @@ widgetframe::frameWidget(pib_numero_indice, width = '100%', height = '100%')
 
 
 ```
+
+
+---
+<div style="text-align: justify">
+
+
+# O QUE É UM AJUSTE SAZONAL?
+
+
+**CONCEITO - CICLOS ECONÔMICOS**
+
+
+</br>
+
+
+- Por sua vez, existem **eventos atípicos**, 
+**alheios às características sazonais dos setores econômicos**, que impactam no processo produtivo 
+de maneira parcial ou integral e, desta forma, acabam deslocando a trajetória do PIB de um 
+determinado país (tanto no sentido de crescimento, quanto de recessão);
+
+
+</br>
+
+
+
+-  Estas oscilações que ocorrem por conta de eventos atípicos são denominadas de **ciclos econômicos**;
+
+
+
+</br>
+
+
+- Em geral, as **análises macroeconômicas são focadas nos ciclos econômicos**, uma vez que, estas 
+alterações de trajetória de crescimento do PIB podem, na prática, representar realidades catastróficas
+para a população do país.
+
+
+---
+<div style="text-align: justify">
+
+
+# O QUE É UM AJUSTE SAZONAL?
+
+
+**CONCEITO - CICLOS ECONÔMICOS**
+
+
+</br>
+
+
+ - Uma das razões dos macroeconomistas buscarem compreender o funcionamento da economia de uma país é, 
+ justamente, **buscar prever ou até mesmo evitar a ocorrência de eventos atípicos** de modo a “suavizar”
+ a trajetória de crescimento econômico; 
+
+</br>
+
+- Como veremos adiante, os macroeconomistas devem se preocupar até mesmo quando o evento atípico tem
+por efeito uma aceleração do crescimento do PIB pois, em alguns casos, este crescimento pode ocorrer 
+com **efeitos colaterais negativos em outras variáveis**.
+
+
+---
+<div style="text-align: justify">
+
+
+# O QUE É UM AJUSTE SAZONAL?
+
+
+**CONCEITO – AJUSTE SAZONAL**
+
+
+</br>
+
+
+ - Para se remover os efeitos sazonais de uma série de modo a viabilizar uma comparação interanual,
+ por exemplo, aplica-se uma **técnica estatística** denominada de **ajuste sazonal**;
+
+
+</br>
+
+
+- Sem maiores rigores estatísticos, deve-se compreender que o **resultado do ajuste sazonal** 
+corresponde a uma série histórica de **tendência do PIB**;
+
+
+</br>
+
+
+- Apenas para facilitar o entendimento, pode-se compreender esta tendência como uma “média entre os 
+valores altos e baixos” da série histórica (a explicação da técnica de extração de sazonalidade 
+foge ao objetivo do curso, ** foque na correta interpretação**).
+
+
+
+
+
 
 
 
