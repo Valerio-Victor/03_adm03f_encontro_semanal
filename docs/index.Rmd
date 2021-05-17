@@ -40,6 +40,9 @@ xaringanExtra::use_search(show_icon = TRUE)
 ## TÓPICOS ABORDADOS
 
 
+</br>
+
+
 - [**PIB (PREÇOS DE MERCADO)**](#pib_precos_mercado)
 
 
@@ -58,18 +61,10 @@ xaringanExtra::use_search(show_icon = TRUE)
 </br>
 
 
-- [**PIB (CICLOS ECONÔMICOS)**](#pib_versus_desemprego)
-
-
-</br>
-
-
-- [**PIB _versus_ DESEMPREGO**](#pib_versus_desemprego)
+- [**PIB (CICLOS ECONÔMICOS)**](#pib_ciclos_economicos)
 
 
 ---
-
-
 class: inverse, center, middle 
 name: pib_precos_mercado
 
@@ -134,7 +129,7 @@ produzidos, são exemplos:
     
     - **PIB a preços de mercado**, em que os preços dos produtos são calculados ao se considerar os preços
     básicos com adição de impostos líquidos (impostos menos subsídios), margens de comércio e de 
-    transporte.
+    transporte;
     
     
 </br>
@@ -218,8 +213,6 @@ widgetframe::frameWidget(pib_precos_mercado, width = '100%', height = '100%')
 
 
 ---
-
-
 class: inverse, center, middle 
 name: pib_numero_indice
 
@@ -242,7 +235,7 @@ name: pib_numero_indice
 
 - Em alguns casos, a análise pode se concentrar na evolução da série histórica e, desta forma, os
 próprios valores de PIB podem não ser relevantes. Como dito, o foco está na análise da **variação do 
-PIB ao longo do tempo**.
+PIB ao longo do tempo**;
 
 
 </br>
@@ -275,13 +268,13 @@ em geral, utiliza-se um instrumento chamado **número índice**.
   utiliza-se o **valor 100**;
   
   - **Passo 3** -> Faça a correspondência para os demais valores da série, simplesmente, a partir de 
-  "**regras de três**".
+  "**regras de três**";
   
   
 </br>
   
   
-- Ainda não ficou claro? Vejamos um exemplo no slide seguinte.
+- **Ainda não ficou claro?** Vejamos um exemplo no slide seguinte.
 
 
 ---
@@ -408,8 +401,6 @@ widgetframe::frameWidget(pib_numero_indice, width = '100%', height = '100%')
 
 
 ---
-
-
 class: inverse, center, middle 
 name: pib_com_ajuste_sazonal
 
@@ -436,7 +427,7 @@ fundamentalmente por 2 motivos, são eles:
 
 	- **Sazonalidade**;
 	
-	- **Ciclos Econômicos**.
+	- **Ciclos Econômicos**;
 	
 	
 </br>
@@ -460,13 +451,13 @@ a comparação entre períodos.
 </br>
 
 
-- São exemplos de eventos sazonais:
+- São exemplos de **eventos sazonais**:
 
-	- Festas Tradicionais e Feriados: Carnaval, Corpus Christi, Natal e etc.;
+	- **Festas Tradicionais e Feriados**: Carnaval, Corpus Christi, Natal e etc.;
 	
-	- Períodos de Safras e Entressafras: Soja, Milho, Café e etc.;
+	- **Períodos de Safras e Entressafras**: Soja, Milho, Café e etc.;
 	
-	- Ciclos Produtivos da Indústria Extrativista: Extrativismo Vegetal e Animal e etc.
+	- **Ciclos Produtivos da Indústria Extrativista**: Extrativismo Vegetal e Animal e etc.;
 	
 	
 </br>
@@ -547,7 +538,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#23395b', alpha = 0.6) +
+                    fill = '#1090A0', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -557,7 +548,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#23395b', alpha = 0.6) +
+                    fill = '#1090A0', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -567,7 +558,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#23395b', alpha = 0.6) +
+                    fill = '#1090A0', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -577,7 +568,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#23395b', alpha = 0.6) +
+                    fill = '#1090A0', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -587,7 +578,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#23395b', alpha = 0.6) +
+                    fill = '#1090A0', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -597,7 +588,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#23395b', alpha = 0.6) +
+                    fill = '#1090A0', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -607,7 +598,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#23395b', alpha = 0.6) +
+                    fill = '#1090A0', alpha = 0.6) +
   ggplot2::annotate(geom = 'rect',
                     
                     xmin = zoo::as.yearqtr('200301', format = '%Y %q'),
@@ -616,7 +607,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#23395b', alpha = 0.6) +
+                    fill = '#1090A0', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -626,7 +617,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#23395b', alpha = 0.6) +
+                    fill = '#1090A0', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -636,7 +627,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#23395b', alpha = 0.6) +
+                    fill = '#1090A0', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -646,7 +637,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#23395b', alpha = 0.6) +
+                    fill = '#1090A0', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -656,7 +647,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#23395b', alpha = 0.6) +
+                    fill = '#1090A0', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -666,7 +657,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#23395b', alpha = 0.6) +
+                    fill = '#1090A0', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -676,7 +667,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#23395b', alpha = 0.6) +
+                    fill = '#1090A0', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -686,7 +677,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#23395b', alpha = 0.6) +
+                    fill = '#1090A0', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -696,7 +687,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#23395b', alpha = 0.6) +
+                    fill = '#1090A0', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -706,7 +697,8 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#23395b', alpha = 0.6) +
+                    fill = '#1090A0', alpha = 0.6) +
+  
   ggplot2::annotate(geom = 'rect',
                     
                     xmin = zoo::as.yearqtr('201301', format = '%Y %q'),
@@ -715,7 +707,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#23395b', alpha = 0.6) +
+                    fill = '#1090A0', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -725,7 +717,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#23395b', alpha = 0.6) +
+                    fill = '#1090A0', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -735,7 +727,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#23395b', alpha = 0.6) +
+                    fill = '#1090A0', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -745,7 +737,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#23395b', alpha = 0.6) +
+                    fill = '#1090A0', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -755,7 +747,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#23395b', alpha = 0.6) +
+                    fill = '#1090A0', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -765,7 +757,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#23395b', alpha = 0.6) +
+                    fill = '#1090A0', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -775,7 +767,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#23395b', alpha = 0.6) +
+                    fill = '#1090A0', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -785,7 +777,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#23395b', alpha = 0.6) +
+                    fill = '#1090A0', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -795,7 +787,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#4A3844', alpha = 0.6) +
+                    fill = '#BA5450', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -805,7 +797,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#4A3844', alpha = 0.6) +
+                    fill = '#BA5450', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -815,7 +807,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#4A3844', alpha = 0.6) +
+                    fill = '#BA5450', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -825,7 +817,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#4A3844', alpha = 0.6) + 
+                    fill = '#BA5450', alpha = 0.6) + 
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -835,7 +827,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#4A3844', alpha = 0.6) + 
+                    fill = '#BA5450', alpha = 0.6) + 
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -845,7 +837,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#4A3844', alpha = 0.6) + 
+                    fill = '#BA5450', alpha = 0.6) + 
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -855,7 +847,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#4A3844', alpha = 0.6) + 
+                    fill = '#BA5450', alpha = 0.6) + 
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -865,7 +857,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#4A3844', alpha = 0.6) + 
+                    fill = '#BA5450', alpha = 0.6) + 
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -875,7 +867,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#4A3844', alpha = 0.6) +
+                    fill = '#BA5450', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -885,7 +877,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#4A3844', alpha = 0.6) +
+                    fill = '#BA5450', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -895,7 +887,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#4A3844', alpha = 0.6) +
+                    fill = '#BA5450', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -905,7 +897,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#4A3844', alpha = 0.6) +
+                    fill = '#BA5450', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -915,7 +907,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#4A3844', alpha = 0.6) +
+                    fill = '#BA5450', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -925,7 +917,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#4A3844', alpha = 0.6) +
+                    fill = '#BA5450', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -935,7 +927,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#4A3844', alpha = 0.6) +
+                    fill = '#BA5450', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -945,7 +937,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#4A3844', alpha = 0.6) +
+                    fill = '#BA5450', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -955,7 +947,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#4A3844', alpha = 0.6) +
+                    fill = '#BA5450', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -965,7 +957,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#4A3844', alpha = 0.6) +
+                    fill = '#BA5450', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -975,7 +967,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#4A3844', alpha = 0.6) +
+                    fill = '#BA5450', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -985,7 +977,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#4A3844', alpha = 0.6) +
+                    fill = '#BA5450', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -995,7 +987,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#4A3844', alpha = 0.6) +
+                    fill = '#BA5450', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -1005,7 +997,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#4A3844', alpha = 0.6) +
+                    fill = '#BA5450', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -1015,7 +1007,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#4A3844', alpha = 0.6) +
+                    fill = '#BA5450', alpha = 0.6) +
   
   ggplot2::annotate(geom = 'rect',
                     
@@ -1025,7 +1017,7 @@ pib_numero_indice <- pib_numero_indice %>%
                     
                     ymin = 95, ymax = 180,
                     
-                    fill = '#4A3844', alpha = 0.6) 
+                    fill = '#BA5450', alpha = 0.6) 
   
 
 pib_numero_indice <- plotly::ggplotly(pib_numero_indice)
@@ -1089,7 +1081,9 @@ para a população do país.
  justamente, **buscar prever ou até mesmo evitar a ocorrência de eventos atípicos** de modo a “suavizar”
  a trajetória de crescimento econômico; 
 
+
 </br>
+
 
 - Como veremos adiante, os macroeconomistas devem se preocupar até mesmo quando o evento atípico tem
 por efeito uma aceleração do crescimento do PIB pois, em alguns casos, este crescimento pode ocorrer 
@@ -1125,9 +1119,279 @@ corresponde a uma série histórica de **tendência do PIB**;
 
 - Apenas para facilitar o entendimento, pode-se compreender esta tendência como uma “média entre os 
 valores altos e baixos” da série histórica (a explicação da técnica de extração de sazonalidade 
-foge ao objetivo do curso, ** foque na correta interpretação**).
+foge ao objetivo do curso, **foque na correta interpretação**).
 
 
+---
+
+
+## O BRASIL EM PERSPECTIVA
+
+
+```{r, warning = F,message = F, error = F, echo = F, fig.align = 'center', dpi = 300}
+
+pib_numero_indice_cas <- sidrar::get_sidra(api = '/t/1621/n1/all/v/all/p/all/c11255/90707',
+                                           
+                         period = as.Date('2020-04-01')) %>%
+  
+  janitor::clean_names() %>%
+  
+  dplyr::mutate(date = zoo::as.yearqtr(trimestre_codigo, format = '%Y %q')) %>%
+  
+  dplyr::select(date, valor)
+
+
+pib_numero_indice_cas <- pib_numero_indice_cas %>%
+  
+  dplyr::rename('Trimestre' = date,
+                
+                'PIB' = valor) %>% 
+  
+  ggplot2::ggplot() +
+
+  ggplot2::geom_line(mapping = ggplot2::aes(x = Trimestre, y = PIB),
+                     
+                     colour = '#23395b',
+                     
+                     size = .5) +
+
+  ggplot2::geom_point(mapping = ggplot2::aes(x = Trimestre, y = PIB),
+                      
+                      colour = '#23395b',
+                      
+                      size = .75) +
+
+  ggplot2::labs(title = 'PIB - Y (Número índice com ajuste sazonal)',
+                
+                x = 'Trimestres',
+                
+                y = 'Número Índice (Base: média de 1995 = 100)',
+                
+                caption = 'Dados: IBGE.') +
+  
+xaringanthemer::theme_xaringan(text_font_size = 15,
+                               
+                               title_font_size = 20)
+
+
+pib_numero_indice_cas <- plotly::ggplotly(pib_numero_indice_cas)
+
+
+widgetframe::frameWidget(pib_numero_indice_cas, width = '100%', height = '100%')
+
+
+```
+
+
+---
+class: inverse, center, middle 
+name: pib_ciclos_economicos
+
+
+## PRODUTO INTERNO BRUTO </br> (CICLOS ECONÔMICOS)
+
+
+---
+<div style="text-align: justify">
+
+
+## ”ESTADOS” DOS CICLOS ECONÔMICOS
+
+
+**CONCEITO**
+
+
+</br>
+
+
+- Ao observar uma série histórica do PIB, ainda que utilizando o número índice com ajuste sazonal, 
+verificamos oscilações em sua trajetória. Como explicado, estas oscilações se devem aos ciclos 
+econômicos. Assim, é possível extrair 3 “estados” destes ciclos econômicos, são eles:
+
+	- **Recessão Econômica**: Sequência de 3 quedas sucessivas nos valores do PIB;
+	
+	- **Recuperação Econômica**: Crescimento do PIB imediatamente posterior à uma recessão econômica;
+	
+	- **Crescimento Econômico**: Consistente crescimento do PIB;
+
+
+</br>
+
+
+- No Gráfico a seguir é apresentada a série histórica do PIB brasileiro (número índice com 
+ajuste sazonal) em que são expressos os períodos de recessão (em vermelho), recuperação (em azul) 
+e crescimento (em verde).
+
+
+---
+
+
+## O BRASIL EM PERSPECTIVA
+
+
+```{r, warning = F,message = F, error = F, echo = F, fig.align = 'center', dpi = 300}
+
+pib_numero_indice_cas <- sidrar::get_sidra(api = '/t/1621/n1/all/v/all/p/all/c11255/90707',
+                                           
+                         period = as.Date('2020-04-01')) %>%
+  
+  janitor::clean_names() %>%
+  
+  dplyr::mutate(date = zoo::as.yearqtr(trimestre_codigo, format = '%Y %q')) %>%
+  
+  dplyr::select(date, valor)
+
+
+pib_numero_indice_cas <- pib_numero_indice_cas %>%
+  
+  dplyr::rename('Trimestre' = date,
+                
+                'PIB' = valor) %>% 
+  
+  ggplot2::ggplot() +
+
+  ggplot2::geom_line(mapping = ggplot2::aes(x = Trimestre, y = PIB),
+                     
+                     colour = '#23395b',
+                     
+                     size = .5) +
+
+  ggplot2::geom_point(mapping = ggplot2::aes(x = Trimestre, y = PIB),
+                      
+                      colour = '#23395b',
+                      
+                      size = .75) +
+
+  ggplot2::labs(title = 'PIB - Y (Número índice com ajuste sazonal)',
+                
+                x = 'Trimestres',
+                
+                y = 'Número Índice (Base: média de 1995 = 100)',
+                
+                caption = 'Dados: IBGE.') +
+  
+xaringanthemer::theme_xaringan(text_font_size = 15,
+                               
+                               title_font_size = 20) +
+
+  ggplot2::annotate(geom = 'rect',
+
+                    xmin = zoo::as.yearqtr('200101', format = '%Y %q'),
+
+                    xmax = zoo::as.yearqtr('200104', format = '%Y %q'),
+
+                    ymin = 95, ymax = 180,
+
+                    fill = '#BA5450', alpha = 0.6) +
+
+  ggplot2::annotate(geom = 'rect',
+
+                    xmin = zoo::as.yearqtr('200204', format = '%Y %q'),
+
+                    xmax = zoo::as.yearqtr('200302', format = '%Y %q'),
+
+                    ymin = 95, ymax = 180,
+
+                    fill = '#BA5450', alpha = 0.6) +
+
+  ggplot2::annotate(geom = 'rect',
+
+                    xmin = zoo::as.yearqtr('201403', format = '%Y %q'),
+
+                    xmax = zoo::as.yearqtr('201604', format = '%Y %q'),
+
+                    ymin = 95, ymax = 180,
+
+                    fill = '#BA5450', alpha = 0.6) +
+
+  ggplot2::annotate(geom = 'rect',
+
+                    xmin = zoo::as.yearqtr('201902', format = '%Y %q'),
+
+                    xmax = zoo::as.yearqtr('202002', format = '%Y %q'),
+
+                    ymin = 95, ymax = 180,
+
+                    fill = '#BA5450', alpha = 0.6) +
+
+  ggplot2::annotate(geom = 'rect',
+
+                    xmin = zoo::as.yearqtr('200104', format = '%Y %q'),
+
+                    xmax = zoo::as.yearqtr('200203', format = '%Y %q'),
+
+                    ymin = 95, ymax = 180,
+
+                    fill = '#1090A0', alpha = 0.6) +
+
+  ggplot2::annotate(geom = 'rect',
+
+                    xmin = zoo::as.yearqtr('200302', format = '%Y %q'),
+
+                    xmax = zoo::as.yearqtr('200401', format = '%Y %q'),
+
+                    ymin = 95, ymax = 180,
+
+                    fill = '#1090A0', alpha = 0.6)+
+
+  ggplot2::annotate(geom = 'rect',
+
+                    xmin = zoo::as.yearqtr('200901', format = '%Y %q'),
+
+                    xmax = zoo::as.yearqtr('200904', format = '%Y %q'),
+
+                    ymin = 95, ymax = 180,
+
+                    fill = '#1090A0', alpha = 0.6)+
+
+  ggplot2::annotate(geom = 'rect',
+
+                    xmin = zoo::as.yearqtr('201604', format = '%Y %q'),
+
+                    xmax = zoo::as.yearqtr('201703', format = '%Y %q'),
+
+                    ymin = 95, ymax = 180,
+
+                    fill = '#1090A0', alpha = 0.6) +
+
+  ggplot2::annotate(geom = 'rect',
+
+                    xmin = zoo::as.yearqtr('202002', format = '%Y %q'),
+
+                    xmax = zoo::as.yearqtr('202004', format = '%Y %q'),
+
+                    ymin = 95, ymax = 180,
+
+                    fill = '#1090A0', alpha = 0.6) +
+
+  ggplot2::annotate(geom = 'rect',
+
+                    xmin = zoo::as.yearqtr('199901', format = '%Y %q'),
+
+                    xmax = zoo::as.yearqtr('200004', format = '%Y %q'),
+
+                    ymin = 95, ymax = 180,
+
+                    fill = '#479365', alpha = 0.6) +
+
+  ggplot2::annotate(geom = 'rect',
+
+                    xmin = zoo::as.yearqtr('200503', format = '%Y %q'),
+
+                    xmax = zoo::as.yearqtr('200802', format = '%Y %q'),
+
+                    ymin = 95, ymax = 180,
+
+                    fill = '#479365', alpha = 0.6)
+
+
+pib_numero_indice_cas <- plotly::ggplotly(pib_numero_indice_cas)
+
+
+widgetframe::frameWidget(pib_numero_indice_cas, width = '100%', height = '100%')
+
+
+```
 
 
 
