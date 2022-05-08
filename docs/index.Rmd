@@ -1,5 +1,5 @@
 ---
-title: 'FLUXO CIRCULAR DA RENDA </br> (ANÁLISE COMPLEMENTAR)'
+title: 'FLUXO CIRCULAR DA RENDA </br> (AULA 05)'
 subtitle: 'ADM03F - Macroeconomia'
 author: 'Autor: Victor Valerio'
 date: 'Última atualização: `r format(Sys.Date(),"%d-%m-%Y")`'
