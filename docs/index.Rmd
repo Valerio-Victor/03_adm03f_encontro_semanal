@@ -230,7 +230,7 @@ em geral, utiliza-se um instrumento chamado **número índice**.
 
 **EXEMPLO HIPOTÉTICO**
 
-```{r , results = 'asis', echo = F, warning = F, message = F, error = F, fig.align ='center'}
+```{r , results = 'asis', echo = F, warning = F, message = F, error = F, fig.align ='center', out.width = '100%'}
 
 
 library(magrittr)
@@ -241,7 +241,7 @@ library(kableExtra)
 
 ex_numero_indice <- data.frame(
   
-  DATAS = c(2015, 2016, 2017, 2018, 2019, 2020),
+  DATAS = c('2015', '2016', '2017', '2018', '2019', '2020'),
   
   VALORES = c('R$ 12.589', 
               'R$ 13.785', 
@@ -268,7 +268,7 @@ knitr::kable(ex_numero_indice,
              
              align = c('c', 'c', 'c', 'c')) %>%
   
-  kable_styling(bootstrap_options = 'striped', font_size = 24)
+  kable_styling(bootstrap_options = 'striped')
   
 
 
